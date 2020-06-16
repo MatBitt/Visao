@@ -24,7 +24,7 @@ res = cv2.bitwise_and(img1, img1, mask=mask_inv)
 # Cria uma imagem res2, onde os pixels brancos da mask_inv passam a ser o pixels da img2, e o resto é preto
 res2 = cv2.bitwise_and(img2, img2, mask=mask) 
 
-#Soma o valor dos pixels do resultado 1 com resultado 2, ou seja, onde em uma imagem é preto, passar a ser o pixel da outra imagem
+# Soma o valor dos pixels do resultado 1 com resultado 2, ou seja, onde em uma imagem é preto, passar a ser o pixel da outra imagem
 final = cv2.add(res, res2) 
 
 # cv2.imshow('img1', img1)

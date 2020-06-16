@@ -7,6 +7,7 @@ def nada(x):
 
 img = cv2.imread('../imagens/kvothe.jpg', cv2.IMREAD_GRAYSCALE)
 
+# Embassa a imagem para diminuir o ruído
 blur = cv2.GaussianBlur(img,(5,5),0)
 
 # Cria uma janela chamada Original, que será a mesma onde ficará a imagem original.
@@ -37,8 +38,8 @@ while True:
     # Valores abaixo de 'valor' são mantidos iguais, e os acima tornam-se pretos 
     _,tozero_inv = cv2.threshold(img, valor, 255, cv2.THRESH_TOZERO_INV)
 
-    # Aqui nao importa o valor, pois ele é determinado automaticamente com base na imagem
-    # Otsu é o melhor filtro para imagens proximas de binario, com cores bem contrastantes
+    # Aqui nao importa o 'valor', pois ele é determinado automaticamente com base na imagem
+    # Apos estipular o 'valor', o que estiver acima disso é branco e abaixo é preto
     _,otsu = cv2.threshold(blur, valor, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 
     cv2.imshow('Original', img)
