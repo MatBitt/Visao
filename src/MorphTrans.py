@@ -29,13 +29,11 @@ while True:
     dilatacao = cv2.dilate(mask, filtro, iterations = 1)
     
     # Essa é uma operação de remoção de falsos positivos
-    # Deixa de reconhecer muita coisa
-    # Para cada positivo, ele olha para seus vizinhos com base no tamanho do filtro e analisa se aquilo é de fato positivo
+    # Ela é o resultado da operação dilatacao(erosao(frame))
     opening = cv2.morphologyEx(mask, cv2.MORPH_OPEN, filtro)
     
     # Essa é uma operação de remoção de falsos negativos
-    # Passa a reconhecer muita coisa
-    # Para cada negativo, ele olha para seus vizinhos com base no tamanho do filtro e analisa se aquilo é de fato negativo
+    # Ela é o resultado da operação erosao(dilatacao(frame))
     closing = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, filtro)
 
     # cv2.imshow('Mascara', mask)
@@ -44,7 +42,7 @@ while True:
     cv2.imshow('Opening', opening)
     cv2.imshow('Closing', closing)
 
-    if cv2.waitKey(5) == 27:
+    if cv2.waitKey(50) == 27:
         break
 
 

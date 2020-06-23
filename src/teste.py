@@ -3,25 +3,24 @@ import numpy as np
 
 cap = cv2.VideoCapture(0)
 
+motion = cv2.createBackgroundSubtractorMOG2()
+
 while True:
     _, frame = cap.read()
 
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    mask = motion.apply(frame)
 
-    blur = cv2.GaussianBlur(gray,(5,5),0)
+    acao = cv2.bitwise_and(frame, frame, mask = mask)
 
-    _,otsu_b = cv2.threshold(blur, 128, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
-
-    edges = cv2.Canny(otsu_b, 100, 200)
-   
     cv2.imshow('Original', frame)
-    cv2.imshow('Arestas', edges)
-    # cv2.imshow('Sem blur', otsu)
-    # cv2.imshow('Com blur', otsu_b)
+    cv2.imshow('mask', mask)
+    cv2.imshow('acao', acao)
 
-    if cv2.waitKey(5) == 27:
+
+
+
+    if cv2.waitKey(50) == 27:
         break
-
 
 
 cap.release()

@@ -47,7 +47,7 @@ while True:
     cv2.imshow('Mascara', mask)
     cv2.imshow('Resultado', res)
 
-    if cv2.waitKey(5) == 27:
+    if cv2.waitKey(50) == 27:
         break
 
 
