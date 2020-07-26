@@ -8,6 +8,19 @@ Neste repositório estão pequenos projetos de visão computacional, bem como um
 
 Estes projetos foram devidos aos videos no youtube do canal sentdex, onde ele fez um compilado de videos ensinando OpenCV e suas ferramentas. Este projetos, portanto, são minhas implementações dos conteúdos fornecidos por ele.
 
+### Resultados
+
+Nesta seção estão alguns resultados de alguns códigos aqui presentes.
+
+#### edges
+
+#### mascara_manual
+
+#### threshold
+
+#### MorphTrans
+
+
 ## English
 
 ### Objective
@@ -16,9 +29,7 @@ In this repository there are some small computer vision projects, with some expl
 
 This projects were all done thanks to sentdex youtube channel, where he  made a bunch of videos teaching OpenCV and its tools. This projects, therefore, are my implementation of the topics taught by him.
 
-### Resultados/Results
+### Results
 
-Nesta seção estão alguns resultados de alguns códigos aqui presentes.
-
-In this section there are some results of the code present here.
+The result of some programs here coded are presented in the "Resultados" section
 
