@@ -33,7 +33,7 @@ while True:
 
     # Apos usarmos cv2.CV_64F é utilizado um float de 64 bits para a operação cv2.Laplacian
     # A função abaixo transofrma os valores em valores sem sinais e converte em 8 bits
-    # Desse modo, a gente consegue obter uma acuracidade maior, deixando a imagem mais detalhada
+    # Desse modo, a gente consegue obter uma acuracia maior, deixando a imagem mais detalhada
     Laplace_uint = np.uint8(np.absolute(Laplace))
 
     # Sobel recebe a imagem, o tipo da variavel, duas variaveis booleanas e o tamanho do 'filtro'

@@ -10,11 +10,11 @@ while True:
 
     mask = motion.apply(frame)
 
-    acao = cv2.bitwise_and(frame, frame, mask = mask)
+    # acao = cv2.bitwise_and(frame, frame, mask = mask)
 
     cv2.imshow('Original', frame)
     cv2.imshow('mask', mask)
-    cv2.imshow('acao', acao)
+    # cv2.imshow('acao', acao)
 
     if cv2.waitKey(50) == 27:
         break

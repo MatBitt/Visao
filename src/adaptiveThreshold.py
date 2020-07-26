@@ -20,7 +20,7 @@ cv2.createTrackbar("Tamanho", "Original", 5, 60, nada)
 
 while True:
 
-    # Atualiza a variável 'valor' com o valor atual do trackbar
+    # Atualiza a variável 'c' com o valor atual do trackbar
     c = cv2.getTrackbarPos("C", "Original")
 
     blockSize = cv2.getTrackbarPos("Tamanho", "Original")
@@ -29,12 +29,12 @@ while True:
     if blockSize == 0:
         blockSize = 1
 
-    # Valores abaixo de 'valor' tornam-se pretos, e os acima tornam-se brancos
     # Neste caso, o valor do pixel é uma média dos valores dos pixels considerados no tamanho do bloco
+    # Valores abaixo de valor tornam-se pretos, e os acima tornam-se brancos
     mean = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 2*blockSize+1, c)
 
-    # Valores abaixo de 'valor' tornam-se brancos, e os acima tornam-se pretos
     # Neste caso, o valor do pixel é uma média ponderada dos valores dos pixels considerados no tamanho do bloco
+    # Valores abaixo de valor tornam-se brancos, e os acima tornam-se pretos
     gaus = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 2*blockSize+1, c)
 
     cv2.imshow('Original', img)
